@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block table%}
+
+<div class="row">
+  <div class="leftcolumn">
+    {% for post in posts reversed %}
+    <div id="rcorners3">
+      <a style="text-decoration: none; color: black;" href="/post/{{post.id}}">
+        <h2 style="font-weight: bold; font-size: 30px;">{{ post.title }}</h2>
+        <h5 style="font-size: 15px;">created at: {{ post.created_at }}</h5>
+        <p style="word-wrap: break-word; font-size: 20px;">{{ post.body|truncatewords:10 }}</p>
+      </a>
+    </div>
+    <br>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

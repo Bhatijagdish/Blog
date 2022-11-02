@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block header %}
+<div class="p=10 lg:p=20 text-center py-4">
+    <h1 class="text-3xl lg:text-6xl text-white">
+        {{post.title}}
+    </h1>
+</div>
+{% endblock %}
+
+
+{% block table%}
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+            <h5 style="font-size: 15px; padding: 5px; color:white;">created at: {{post.created_at}}</h5>
+            <p style="font-weight: bold; font-size: 20px; color:white;">{{post.body}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

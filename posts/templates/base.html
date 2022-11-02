@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            * {
+            box-sizing: border-box;
+            }
+
+            #rcorners1 {
+                border-radius: 15px 50px 30px 5px;
+                background: #73AD21;
+                padding: 20px;
+                width: 200px;
+                height: 150px;
+            }
+
+            #rcorners2 {
+                border-radius: 50px 15px 5px 30px;
+                background: #73AD21;
+                padding: 20px;
+                width: 200px;
+                height: 150px;
+            }
+            
+            #rcorners3 {
+                border-radius: 15px;
+                background: #73AD21;
+                padding: 30px;
+                width: 500px;
+                height: 200px;
+            }
+
+            #rcorners1:hover {
+                background: #578219;
+            }
+            #rcorners2:hover {
+                background: #578219;
+            }
+
+            body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f1f1f1;
+            }
+
+            .header {
+            padding: 2px;
+            font-size: 40px;
+            text-align: center;
+            background: white;
+            }
+
+            .leftcolumn {   
+            float: left;
+            width: 100%;
+            }
+
+            .rightcolumn {   
+                float: right;
+                width: 100%;
+            }
+
+            .card {
+                border-radius: 15px;
+                background-color: #486d15;
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+
+            @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {   
+                width: 100%;
+                padding: 0;
+            }
+            }
+        </style>
+    </head>
+    <body class='bg-teal-800'>
+        <nav class="flex items-center justify-between px-4 py-6 bg-teal-800">
+            
+            <div class="mb-5">
+                <a href="/" id="rcorners1">Home</a>
+            </div>
+            <div class="mb-5">
+                <a href="/blog/" id="rcorners2">Add New Blog</a>
+            </div>
+        </nav>
+        
+        {% block header %}
+        <div class="p=10 lg:p=20 text-center py-4">
+            <h1 class="text-3xl lg:text-6xl text-white">
+                Blog Dashboard
+            </h1>
+        </div>
+        {% endblock %}
+        
+        {% block table %}{% endblock %}
+    </body>
+
+</html>
+
